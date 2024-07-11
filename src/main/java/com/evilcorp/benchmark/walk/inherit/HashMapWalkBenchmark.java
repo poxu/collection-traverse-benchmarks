@@ -40,7 +40,7 @@ public class HashMapWalkBenchmark extends BaseCollectionTest<HashMap<Integer, St
     }
 
     @Benchmark
-    public void walkHashMap(Blackhole box) {
+    public void walk(Blackhole box) {
         for (Map.Entry<Integer, String> e : testObject.entrySet()) {
             box.consume(e.getKey());
         }

@@ -40,7 +40,7 @@ public class HashMapSumBenchmark extends BaseCollectionTest<HashMap<Integer, Str
     }
 
     @Benchmark
-    public int sumHashMap() {
+    public int sum() {
         int sum = 0;
         for (Map.Entry<Integer, String> e : testObject.entrySet()) {
             sum += e.getKey();
