@@ -41,10 +41,12 @@ public class LinkedHashMapSumBenchmark extends BaseCollectionTest<HashMap<Intege
     }
 
     @Benchmark
-    public void walkHashMap(Blackhole box) {
+    public int sum() {
+        int sum = 0;
         for (Map.Entry<Integer, String> e : testObject.entrySet()) {
-            box.consume(e.getKey());
+            sum += e.getKey();
         }
+        return sum;
     }
 
     public static void main(String[] args) throws RunnerException {
