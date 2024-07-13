@@ -28,15 +28,15 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
 @Fork(5)
 @State(Scope.Benchmark)
-public class LinkedHashMapWalkBenchmark extends BaseCollectionTest<HashMap<Integer, String>> {
+public class LinkedHashMapWalkBenchmark extends BaseCollectionTest<LinkedHashMap<Integer, String>> {
 
     @Override
     public void set(int i, int j, int val) {
-        testObject.put(i * cols * j, String.valueOf(val));
+        testObject.put(i * cols + j, String.valueOf(val));
     }
 
     @Override
-    public HashMap<Integer, String> create(int rows, int cols) {
+    public LinkedHashMap<Integer, String> create(int rows, int cols) {
         return new LinkedHashMap<>();
     }
 
